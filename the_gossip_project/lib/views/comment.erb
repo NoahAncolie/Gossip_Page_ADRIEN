@@ -47,11 +47,6 @@ div {
     border-radius : 10px;
     box-shadow : 2.5px -2.5px  4px #302f2f, -3px 3px 4px #0f0f0f;
 }
-
-.bg {
-    color : skyblue;
-    text-shadow : 0 0 5px blue;
-}
 </style>
 <html lang="en">
 <head>
@@ -61,13 +56,12 @@ div {
     <title>Document</title>
 </head>
 <body>
-<h1>EDIT GOSSIP</h1>
-<p class="bg">Edit this Gossip : </p><br>
-<p><%=gossip.value%></p><br><br>
-<form action='/gossips/<%=id%>/edit' method='POST'>
-    Nouvel auteur :  <input type='text' name='gossip_author'/><br/><br>
-    Modifie le potin : <input type='text' name='gossip_content'/><br/><br>
-<input class='button' type='submit' value='Éditer Gossip'/>
+<h1>Lache ton commentaire</h1>
+<p>Gossip <%=id%></p><br>
+<form action='/gossips/<%=id%>/comment' method='POST'>
+    Username :  <input type='text' name='gossip_comment_name'/><br/><br>
+    comment : <input type='text' name='gossip_comment'/><br/><br>
+<input class='button' type='submit' value='post'/>
 </form>
 </body>
 </html>

@@ -1,5 +1,5 @@
 class Gossip
-    attr_accessor :name, :value
+    attr_accessor :name, :value, :comment
 
     def initialize(name, value)
         @name = name

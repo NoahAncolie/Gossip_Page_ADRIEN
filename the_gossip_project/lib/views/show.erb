@@ -24,8 +24,31 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     color : lightblue;
     padding : 50px;
-    text-shadow : 0 0 5px white;
+    text-shadow : 0 0 5px lightblue;
     font-size : 500%;
+}
+
+h4 {
+    margin-top : 8px;
+    margin-bottom : 4px;
+}
+
+.commentary {
+    margin : 10px 400px;
+    border : 1px solid pink;
+    box-shadow : 0 0 5px violet;
+}
+
+.bg {
+    color : skyblue;
+}
+
+.space {
+    margin-top : 30px;
+    border-top : solid 1px #303030;
+    padding : 20px 0;
+    margin-left : 280px;
+    margin-right : 280px;
 }
 </style>
 <html lang="en">
@@ -38,10 +61,19 @@ h1 {
 </head>
 <body>
     <h1>GOSSIP N°<%= id + 1 %></h1>
-    Son auteur : <%= gossip.name %><br>
-    Le contenu du potin : <%= gossip.value %><br><br>
+    <p> <h4 class='bg'>Son auteur :</h4> <%= gossip.name %><br></p>
+    <p> <h4 class='bg'>Le contenu du potin :</h4> <%= gossip.value %><br><br></p>
 
-    <a href="/">Lien pour revenir à la page des potins</a></p><br>
-    <a href="/gossips/<%=id%>/edit">Edit Gossip</a></p>
+    <div class='space'>
+        <a href="/">Lien pour revenir à la page des potins</a></p><br>
+        <a href="/gossips/<%=id%>/comment">Poste un commentaire Chacal</a></p><br>
+        <a href="/gossips/<%=id%>/edit">Edit Gossip</a></p>
+    </div>
+    <%Comment.index_table(id).each do |comment|%>
+    <div class='commentary'>
+    <p class='bg'>Username</p> <%=comment[0]%><br>
+    <p class='bg'>Comment</p> <%=comment[1]%>
+    </div>
+    <%end%>
 </body>
 </html>
