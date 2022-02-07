@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<style type="text/css">
+* {
+    padding : 0;
+    margin : 0;
+    background-color: #171717;
+    text-align : center;
+    justify-content: justify;
+    color : lightgray;
+    text-shadow : 0 0 2px black;
+}
+
+.top-link {
+    font-family : Helvetica;
+    font-size : 120%;
+}
+
+.names {
+    font-family : cursive, fantasy;
+    font-size : 130%;
+    color : rgb(55, 135, 255);
+    text-shadow : 0 0 1px lightblue;
+}
+
+a:link, a:visited {
+    text-shadow: 0 0 7px violet;
+    color : pink;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    text-shadow: black 0 0 10px;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color : lightblue;
+    padding : 50px;
+    text-shadow : 0 0 5px white;
+    font-size : 500%;
+}
+
+div {
+    border-radius : 10px;
+    box-shadow : 2.5px -2.5px  4px #302f2f, -3px 3px 4px #0f0f0f;
+    margin : 10px 200px;
+    position : relative;
+    padding-top : 20px;
+    overflow-y : auto;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gossip Project</title>
+    <link rel='stylesheet' ='style.css'>
+</head>
+<body>
+<br><br>
+    <a class='top-link' href = '/gossips/new'>Ajouter un Gossip</a>
+
+
+    <h1>GOSSIPS</h1>
+    <% gossips.each do |gossip| %>
+      <div>
+        <p>
+          <p class="names">AUTHOR  :</p> <%= gossip.name %><br/>
+          <p class="names">CONTENT  :</p> <%= gossip.value %><br/><br/>
+          <a href="gossips/<%=gossips.index(gossip)%>">Link to Gossip</a><br><br><br><br>
+        </p>
+      </div>
+    <% end %>
+</body>
+</html>

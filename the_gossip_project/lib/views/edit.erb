@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<style type="text/css">
+* {
+    padding : 0;
+    margin : 0;
+    background-color: #171717;
+    text-align : center;
+    justify-content: justify;
+    color : lightgray;
+    text-shadow : 0 0 2px black;
+}
+
+
+.top-link {
+    font-family : Helvetica;
+    font-size : 120%;
+}
+
+a:link, a:visited {
+    color : pink;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color : rgba(255, 192, 203, 0.534);
+    text-shadow: black 0 0 10px;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color : lightblue;
+    padding : 50px;
+    text-shadow : 0 0 5px white;
+    font-size : 500%;
+}
+
+div {
+    border : solid 1px pink;
+    margin : 10px 20px;
+    position : relative;
+    padding-top : 20px;
+}
+
+.button {
+    border : none;
+    padding : 10px;
+    border-radius : 10px;
+    box-shadow : 2.5px -2.5px  4px #302f2f, -3px 3px 4px #0f0f0f;
+}
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>EDIT GOSSIP</h1>
+<p>Edit this Gossip : </p><br>
+<p><%=gossip.value%></p><br><br>
+<form action='/gossips/<%=id%>/edit' method='POST'>
+    Nouvel auteur :  <input type='text' name='gossip_author'/><br/><br>
+    Modifie le potin : <input type='text' name='gossip_content'/><br/><br>
+<input class='button' type='submit'/>
+</form>
+</body>
+</html>

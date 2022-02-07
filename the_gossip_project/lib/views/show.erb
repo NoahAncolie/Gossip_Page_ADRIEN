@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<style type="text/css">
+* {
+    padding : 0;
+    margin : 0;
+    background-color: #171717;
+    text-align : center;
+    justify-content: justify;
+    color : lightgrey;
+    text-shadow : 0 0 2px black;    
+}
+
+a:link, a:visited {
+    color : pink;
+    text-decoration: none;
+    text-shadow: 0 0 7px violet;
+}
+
+a:hover, a:active {
+    text-shadow: black 0 0 10px;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color : lightblue;
+    padding : 50px;
+    text-shadow : 0 0 5px white;
+    font-size : 500%;
+}
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <h1>GOSSIP N°<%= id + 1 %></h1>
+    Son auteur : <%= gossip.name %><br>
+    Le contenu du potin : <%= gossip.value %><br><br>
+
+    <a href="/">Lien pour revenir à la page des potins</a></p><br>
+    <a href="/gossips/<%=id%>/edit">Edit Gossip</a></p>
+</body>
+</html>
